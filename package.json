@@ -29,6 +29,5 @@
   },
   "dependencies": {
     "core-js": "^3.25.2"
-  },
-  "type": "module"
+  }
 }

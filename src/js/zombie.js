@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/extensions
-import Character from './character.js';
+import Character from './character';
 
 export default class Zombie extends Character {
   constructor(name, type = 'Zombie', attack = 40, defens = 10) {

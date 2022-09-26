@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/extensions
-import Character from './character.js';
+import Character from './character';
 
 export default class Daemon extends Character {
   constructor(name, type = 'Daemon', attack = 10, defens = 40) {
