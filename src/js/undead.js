@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/extensions
 import Character from './character.js';
 
 export default class Undead extends Character {

@@ -30,5 +30,3 @@ export default class Character {
     this.defens = defens;
   }
 }
-
-// Bowman, Swordsman, Magician, Daemon, Undead, Zombie
