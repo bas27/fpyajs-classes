@@ -6,24 +6,27 @@ const typeList = [
   'Undead',
   'Zombie',
 ];
+const lenName = {
+  min: 2,
+  max: 10,
+};
 
 export default class Character {
-  #min = 2;
-
-  #max = 10;
-
   constructor(name, type, attack, defens, health = 100, level = 1) {
-    this.name = name;
-    if (name.length < this.#min || name.length > this.#max) {
-      throw new Error('Ошибка: длина name превышает допустимое значение');
-    }
-    if (typeof name !== 'string') {
+    if (name.length < lenName.min || name.length > lenName.max) {
+      throw new Error('Ошибка: длина name имеет недопустимое значение');
+    } else if (typeof name !== 'string') {
       throw new Error('Ошибка: установите строковое значение полю name');
+    } else {
+      this.name = name;
     }
-    this.type = type;
+
     if (!typeList.includes(type)) {
       throw new Error('Ошибка: тип персонажа не соответствует заданному');
+    } else {
+      this.type = type;
     }
+
     this.health = health;
     this.level = level;
     this.attack = attack;
