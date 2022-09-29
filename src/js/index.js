@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+// eslint-disable-next-line max-classes-per-file
 const typeList = [
   'Bowman',
   'Swordsman',
@@ -11,7 +13,7 @@ const lenName = {
   max: 10,
 };
 
-export default class Character {
+class Character {
   constructor(name, type, attack, defens, health = 100, level = 1) {
     if (name.length < lenName.min || name.length > lenName.max) {
       throw new Error('Ошибка: длина name имеет недопустимое значение');
@@ -45,3 +47,22 @@ export default class Character {
     return this;
   }
 }
+
+// function aaa(key, val) {
+//   aaa[key] = val
+// }
+// // eslint-disable-next-line no-return-assign
+// Character.prototype.levelUp = () => this;
+
+class Bowman extends Character {
+  constructor(name, type = 'Bowman', attack = 25, defens = 25) {
+    super(name, type, attack, defens);
+  }
+}
+
+const bow1 = new Bowman('Nik');
+
+// console.log(bow1);
+
+console.log(bow1.levelUp());
+console.log(bow1.levelUp())
