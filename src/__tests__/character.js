@@ -11,7 +11,7 @@ describe('Создание персонажа', () => {
         health: 100,
         level: 1,
         attack: 25,
-        defens: 25,
+        defence: 25,
       };
       expect(recived).toEqual(expected);
     } catch (Error) {
@@ -28,7 +28,7 @@ describe('Создание персонажа', () => {
         health: 100,
         level: 1,
         attack: 25,
-        defens: 25,
+        defence: 25,
       };
       expect(recived).toEqual(expected);
     } catch (Error) {
@@ -45,7 +45,7 @@ describe('Создание персонажа', () => {
         health: 100,
         level: 1,
         attack: 25,
-        defens: 25,
+        defence: 25,
       };
       expect(recived).toEqual(expected);
     } catch (Error) {
@@ -62,7 +62,7 @@ describe('Создание персонажа', () => {
         health: 100,
         level: 1,
         attack: 25,
-        defens: 25,
+        defence: 25,
       };
       expect(recived).toEqual(expected);
     } catch (Error) {
@@ -79,7 +79,7 @@ describe('Создание персонажа', () => {
         health: 100,
         level: 1,
         attack: 25,
-        defens: 25,
+        defence: 25,
       };
       expect(recived).toEqual(expected);
     } catch (e) {
@@ -96,7 +96,7 @@ test('Проверяем levelUp', () => {
     health: 100,
     level: 2,
     attack: 18,
-    defens: 30,
+    defence: 30,
   };
   expect(king.levelUp()).toEqual(expected);
 });
@@ -110,10 +110,40 @@ test('Проверяем levelUp', () => {
       health: 0,
       level: 2,
       attack: 18,
-      defens: 30,
+      defence: 30,
     };
     expect(king.levelUp()).toEqual(expected);
   } catch (e) {
     expect('Ошибка: нельзя повысить левел умершего').toContain(e.message);
+  }
+});
+
+test('Проверяем damage', () => {
+  const king = new Character('King', 'Swordsman', 15, 25, 100, 1);
+  const expected = {
+    name: 'King',
+    type: 'Swordsman',
+    health: 85,
+    level: 1,
+    attack: 15,
+    defence: 25,
+  };
+  expect(king.damage(20)).toEqual(expected);
+});
+
+test('Проверяем damage', () => {
+  try {
+    const king = new Character('King', 'Swordsman', 15, 25, 0, 1);
+    const expected = {
+      name: 'King',
+      type: 'Swordsman',
+      health: 0,
+      level: 2,
+      attack: 18,
+      defence: 30,
+    };
+    expect(king.damage(20)).toEqual(expected);
+  } catch (e) {
+    expect('Ошибка: нельзя убить умершего').toContain(e.message);
   }
 });

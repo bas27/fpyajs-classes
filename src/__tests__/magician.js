@@ -8,7 +8,7 @@ test('Создание персонажа Daemon', () => {
     health: 100,
     level: 1,
     attack: 10,
-    defens: 40,
+    defence: 40,
   };
   expect(recived).toEqual(expected);
 });
