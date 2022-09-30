@@ -1,4 +1,4 @@
-# fpyajs-classes
+# fpyajs-classes [![Build status](https://ci.appveyor.com/api/projects/status/gf4j6lh4mflpdcq8?svg=true)](https://ci.appveyor.com/project/bas27/fpyajs-classes)
 
 ## Классы, наследование
 
